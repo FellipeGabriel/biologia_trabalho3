@@ -1,0 +1,12 @@
+.claude/
+plano_trabalho3.md
+
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rcheck/
+*-Ex.R
+
+.DS_Store
+Thumbs.db
