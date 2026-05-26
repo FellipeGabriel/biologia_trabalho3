@@ -1,8 +1,10 @@
 library(igraph)
 
-g_dmela <- readRDS("output/redes/g_dmela.rds")
-g_hs_ht <- readRDS("output/redes/g_hs_ht.rds")
+# carrega os grafos limpos gerados pelo script 01
+g_dmela <- readRDS("R/output/redes/g_dmela.rds")
+g_hs_ht <- readRDS("R/output/redes/g_hs_ht.rds")
 
+# calcula as metricas basicas de uma rede e devolve como linha de tabela
 caracterizar <- function(g, nome) {
   data.frame(
     rede = nome,
@@ -15,6 +17,7 @@ caracterizar <- function(g, nome) {
   )
 }
 
+# monta a tabela comparativa das duas redes
 tabela <- rbind(
   caracterizar(g_dmela, "bio-dmela"),
   caracterizar(g_hs_ht, "bio-HS-HT")
@@ -22,5 +25,6 @@ tabela <- rbind(
 
 print(tabela)
 
-dir.create("output/tabelas", showWarnings = FALSE, recursive = TRUE)
-write.csv(tabela, "output/tabelas/caracterizacao_basica.csv", row.names = FALSE)
+# salva como csv para o relatorio
+dir.create("R/output/tabelas", showWarnings = FALSE, recursive = TRUE)
+write.csv(tabela, "R/output/tabelas/caracterizacao_basica.csv", row.names = FALSE)

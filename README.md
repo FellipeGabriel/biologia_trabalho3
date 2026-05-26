@@ -6,11 +6,13 @@ Este repositório contém o código e os dados do Trabalho 3 da disciplina. O ob
 
 Basta clonar o repositório e abrir o arquivo `biologia_trabalho3.Rproj` no RStudio. Ele já configura o diretório de trabalho automaticamente.
 
-Antes de rodar os scripts, instale o pacote igraph caso ainda não tenha:
+Antes de rodar os scripts, instale os pacotes necessários caso ainda não tenha:
 
 ```r
-install.packages("igraph")
+install.packages(c("igraph", "graphlayouts", "ragg"))
 ```
+
+O `igraph` é a biblioteca principal de análise de redes. O `graphlayouts` fornece algoritmos de layout otimizados para redes grandes, usados na geração das figuras coloridas por coreness. O `ragg` é um device gráfico mais eficiente que o padrão do Windows, importante para salvar as figuras em PNG sem demora.
 
 ## Datasets
 
@@ -22,4 +24,4 @@ A rede `bio-HS-HT` está na pasta `bio-HS-HT/` e é uma rede de associação fun
 
 ## Estrutura de pastas
 
-A pasta `R/` guarda os scripts numerados por etapa do trabalho. A pasta `output/figuras/` guarda as figuras geradas. A pasta `output/tabelas/` guarda as tabelas geradas.
+A pasta `R/` guarda os scripts numerados por etapa do trabalho. A pasta `R/output/figuras/` guarda as figuras geradas. A pasta `R/output/tabelas/` guarda as tabelas geradas.
